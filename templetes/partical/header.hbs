@@ -1,0 +1,26 @@
+<header>
+<h1>{{title}}</h1>
+
+<div style="display: flex;flex-direction:row">
+  <a href="/" id="1" >weather</a>
+  <a href="/about" id="2">about</a>
+  <a href="/help" id="3">help</a>
+  </div>
+  </header>
+<script>
+  let currentURL = window.location.href;
+let lastPart = currentURL.substr(currentURL.lastIndexOf('/') + 1);
+
+const urlToElementId = {
+  "": 1,
+  "about": 2,
+  "help": 3
+};
+
+if (urlToElementId.hasOwnProperty(lastPart)) {
+  document.getElementById(urlToElementId[lastPart]).classList.add("active");
+}
+
+   
+
+</script>
